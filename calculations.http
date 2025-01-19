@@ -1,9 +1,16 @@
-# POST add
 POST http://localhost:8080/add
 Content-Type: application/json
 
 {
-  "number1": 1,
+  "number1": "texte",
   "number2": 2
 }
 
+### 
+POST http://localhost:8080/multiply
+Content-Type: application/json
+
+{
+  "number1": 2,
+  "number2": 2
+}

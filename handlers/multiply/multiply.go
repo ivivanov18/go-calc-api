@@ -1,4 +1,4 @@
-package add
+package multiply
 
 import (
 	"encoding/json"
@@ -7,7 +7,7 @@ import (
 )
 
 func Handle(w http.ResponseWriter, r *http.Request) {
-	var operation AddDto
+	var operation MultiplyDto
 
 	err := json.NewDecoder(r.Body).Decode(&operation)
 	if err != nil {
@@ -15,7 +15,7 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	sum := operation.Number1 + operation.Number2
+	product := operation.Number1 * operation.Number2
 
-	fmt.Fprintf(w, "%d", sum)
+	fmt.Fprintf(w, "%d", product)
 }
