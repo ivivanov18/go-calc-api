@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/ivivanov18/go-cal-api/handlers"
+	"github.com/ivivanov18/go-cal-api/handlers/add"
 )
 
 func main() {
@@ -13,6 +14,7 @@ func main() {
 	router := http.NewServeMux()
 
 	router.HandleFunc("GET /test", handlers.HandleTest)
+	router.HandleFunc("POST /add", add.HandleAdd)
 
 	srv := &http.Server{
 		Addr:    ":8080",
